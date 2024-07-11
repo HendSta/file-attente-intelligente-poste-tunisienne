@@ -1,0 +1,69 @@
+<div class="flex items-center justify-center h-full">
+    <div class="card glass w-full max-w-3xl rounded-lg overflow-hidden shadow-lg">
+      <div class="card-body p-6">
+        <form (ngSubmit)="onSubmit()" class="space-y-4">
+          <div class="flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="cin" class="block text-sm font-medium text-gray-700">CIN</label>
+              <input type="text" id="cin" name="cin" [(ngModel)]="user.cin" readonly class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="nom" class="block text-sm font-medium text-gray-700">Nom</label>
+              <input type="text" id="nom" name="nom" [(ngModel)]="user.nom" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="prenom" class="block text-sm font-medium text-gray-700">Prénom</label>
+              <input type="text" id="prenom" name="prenom" [(ngModel)]="user.prenom" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="dateNaissance" class="block text-sm font-medium text-gray-700">Date de Naissance</label>
+              <input type="text" id="dateNaissance" name="dateNaissance" [(ngModel)]="user.date_naissance" readonly class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="codePostal" class="block text-sm font-medium text-gray-700">Code Postal</label>
+              <input type="text" id="codePostal" name="codePostal" [(ngModel)]="user.code_postal" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="tel" class="block text-sm font-medium text-gray-700">Numéro de Téléphone</label>
+              <input type="tel" id="tel" name="tel" [(ngModel)]="user.tel" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full px-4 mb-4">
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" [(ngModel)]="user.email" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full px-4 mb-4">
+              <label for="mdp" class="block text-sm font-medium text-gray-700">Mot de Passe</label>
+              <input type="password" id="mdp" name="mdp" [(ngModel)]="user.mdp" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full px-4 mb-4">
+                <label for="service" class="block text-sm font-medium text-gray-700">Service</label>
+                <select id="service" name="service" [(ngModel)]="user.service"
+                    class="select select-primary w-full max-w-xs">
+                    <option disabled selected>Sélectionner un service</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Financier">Financier</option>
+                    <option value="Poste">Poste</option>
+                </select>
+            </div>
+           
+            <div class="w-full px-4 mb-4">
+                <label for="role" class="block text-sm font-medium text-gray-700">Rôle</label>
+                <select id="role" name="role" [(ngModel)]="user.role"
+                    class="select select-primary w-full max-w-xs">
+                    <option disabled selected>Sélectionner un role</option>
+                    <option value="admin">Admin</option>
+                    <option value="chef">Chef</option>
+                    <option value="agent">Agent</option>
+                </select>
+            </div>
+          </div>
+          
+          <div class="card-actions justify-end">
+            <button class="btn btn-active btn-block text-white hover:bg-blue-800 hover:text-gray-300" type="submit" style="background-color: #00008B;">MODIFIER</button>
+            <button class="btn btn-active btn-block text-white hover:bg-blue-800 hover:text-gray-300" type="button" style="background-color: #00008B;" routerLink="/admin/moncompte">RETOUR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

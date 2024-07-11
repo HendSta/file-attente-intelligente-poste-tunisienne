@@ -1,0 +1,44 @@
+ <!-- Affichage de l'alerte de succès -->
+ <div *ngIf="showSuccessAlert" role="alert" class="alert alert-success mb-4 text-sm"> <!-- Ajout de la classe text-sm pour diminuer la taille -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <!-- Réduction de la taille de l'icône avec la classe h-5 et w-5 -->
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
+    <span class="font-medium">Votre ticket a été chargé avec succès!</span>
+</div>
+
+
+<div class="flex items-center justify-center h-full">
+    <div class="w-full max-w-xl">
+        <div class="card glass rounded-lg overflow-hidden shadow-lg">
+            <div class="card-body p-6">
+                
+                <!-- Contenu du ticket -->
+                <div class="flex items-center justify-between mb-4">
+                    <p class="text-sm font-medium">{{ currentDate | date: 'dd/MM/yyyy' }}</p>
+                    <p class="text-sm font-medium text-right">{{ currentDate | date: 'HH:mm' }}</p>
+                </div>
+                <div class="flex items-center justify-center mb-4">
+                    <img src="./assets/images/posteLogoTicket.png" class="h-16">
+                </div>
+                <div class="flex items-center justify-center mb-4">
+                    <h2 class="text-2xl font-bold">Ticket Numéro : {{ ticket?.numTicket }}</h2>
+                </div>
+                <div class="flex items-center justify-center mb-4">
+                    <p class="text-lg text-center"><strong>{{ ticket?.service }}</strong></p>
+                </div>
+                <div class="flex items-center justify-center mb-4">
+                    <div class="text-sm font-medium">Nombre Total de Tickets: {{ totalTickets }}</div>
+                </div>
+                <div class="flex items-center justify-center mb-4">
+                    <div class="text-sm font-medium">Temps d'attente estimé: {{ estimatedWaitTime }}</div>
+                </div>
+                <div class="flex items-center justify-center mb-4">
+                    <p class="text-sm font-medium text-center">{{ ticket?.poste?.adresse }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-4">
+            <button class="btn btn-active btn-block text-white hover:bg-blue-800 hover:text-gray-300" style="background-color: #00008B;" (click)="goBack()">Retour</button>
+        </div>
+    </div>
+</div>

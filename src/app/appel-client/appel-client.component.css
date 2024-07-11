@@ -1,0 +1,49 @@
+.btn-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc; /* Replace with your desired background color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-circle:hover {
+    background-color: #aaa; /* Replace with hover background color */
+  }
+  
+  .btn-circle svg {
+    width: 60%;
+    height: 60%;
+    fill: none;
+    stroke: #000; /* Replace with SVG stroke color */
+    stroke-width: 2;
+  }
+
+  .alert {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .alert-success {
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    color: #155724;
+  }
+  
+  .alert-error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+  
+  .alert svg {
+    margin-right: 10px;
+  }
+  

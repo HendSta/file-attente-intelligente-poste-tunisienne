@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="max-w-7xl w-full p-8 bg-white shadow-lg rounded-lg">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: #00008B;">Statistiques sur les heures travaillées par les employés</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card">
+        <div class="stat-title">Total des heures travaillées</div>
+        <div class="stat-value" style="color: #00008B;">{{ totalHoursWorked.toFixed(2) }} heures</div>
+        <div class="stat-description">Depuis le début</div>
+      </div>
+
+      <div class="card">
+        <div class="stat-title">Nombre moyen d'heures travaillées</div>
+        <div class="stat-value" style="color: #00008B;">{{ averageHoursWorked.toFixed(2) }} heures</div>
+        <div class="stat-description">Par pointage</div>
+      </div>
+
+      <div class="card">
+        <div class="stat-title">Nombre total d'employés</div>
+        <div class="stat-value" style="color: #00008B;">{{ totalEmployees }}</div>
+        <div class="stat-description">Employés actuellement</div>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 chart-row">
+      <div class="chart-item">
+        <h3 class="text-center">Line Chart</h3>
+        <div style="display: block;">
+          <canvas baseChart
+                  [data]="lineChartData"
+                  [options]="lineChartOptions"
+                  [type]="lineChartType">
+          </canvas>
+        </div>
+      </div>
+
+      <div class="chart-item">
+        <h3 class="text-center">Bar Chart</h3>
+        <div style="display: block;">
+          <canvas baseChart
+                  [data]="barChartData"
+                  [options]="barChartOptions"
+                  [type]="barChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

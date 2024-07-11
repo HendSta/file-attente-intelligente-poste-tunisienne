@@ -1,0 +1,36 @@
+<div class="flex items-center justify-center h-full">
+    <div class="card glass w-full max-w-3xl rounded-lg overflow-hidden shadow-lg">
+      <div class="card-body p-6">
+        <form (ngSubmit)="onSubmit()" class="space-y-4">
+          <div class="flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="code_postal" class="block text-sm font-medium text-gray-700">Code Postal</label>
+              <input type="text" id="code_postal" name="code_postal" [(ngModel)]="poste.code_postal" readonly class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+                <label for="adresse" class="block text-sm font-medium text-gray-700">Code Postal</label>
+                <input type="text" id="adresse" name="adresse" [(ngModel)]="poste.adresse" readonly class="file-input file-input-bordered file-input-primary w-full"/>
+              </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="heure_debut" class="block text-sm font-medium text-gray-700">Ouvert à</label>
+              <input type="text" id="heure_debut" name="heure_debut" [(ngModel)]="poste.heure_debut" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <label for="heure_fin" class="block text-sm font-medium text-gray-700">Fermé à</label>
+              <input type="text" id="heure_fin" name="heure_fin" [(ngModel)]="poste.heure_fin" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>
+            <div class="w-full px-4 mb-4">
+              <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+              <input type="status" id="status" name="status" [(ngModel)]="poste.status" class="file-input file-input-bordered file-input-primary w-full"/>
+            </div>   
+          </div>
+          
+          <div class="card-actions justify-end">
+            <button class="btn btn-active btn-block text-white hover:bg-blue-800 hover:text-gray-300" type="submit" style="background-color: #00008B;">MODIFIER</button>
+            <button class="btn btn-active btn-block text-white hover:bg-blue-800 hover:text-gray-300" type="button" style="background-color: #00008B;" routerLink="/admin/bureauposte">RETOUR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

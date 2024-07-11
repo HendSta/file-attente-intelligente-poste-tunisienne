@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Ajuster la hauteur selon vos besoins */
+}
+
+.max-w-7xl {
+  max-width: 1200px; /* Augmenter la largeur maximale */
+  width: 90%; /* Pourcentage de la largeur disponible */
+  padding: 20px; /* Ajuster l'espace intérieur */
+  background-color: #ffffff; /* Couleur de fond */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  border-radius: 8px; /* Coins arrondis */
+  height: auto; /* Ajuster la hauteur automatiquement */
+  max-height: 70vh; /* Hauteur maximale en pourcentage de la vue */
+  overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+}
+
+
+.card {
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px; /* Espacement entre les cartes */
+}
+
+.card h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1rem; /* Réduire l'espace sous le titre */
+  color: #00008B; /* Couleur du titre */
+}
+
+.card .stat-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(16, 16, 33);
+  margin-bottom: 10px; /* Espacement sous le titre des statistiques */
+}
+
+.card .stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00008B; /* Couleur des valeurs des statistiques */
+}
+
+.card .stat-description {
+  font-size: 0.875rem; /* Taille légèrement plus petite pour la description */
+  color: #6b7280;
+}
+
+.chart-row {
+  display: flex;
+  flex-wrap: wrap; /* Permettre le retour à la ligne des graphiques */
+  justify-content: space-between;
+  margin-top: 20px; /* Espacement au-dessus des graphiques */
+}
+
+.chart-item {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px; /* Espacement entre les graphiques */
+  max-width: calc(50% - 20px); /* Largeur maximale pour deux graphiques par ligne */
+}
+
+.chart-item canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+.chart-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #00008B; /* Couleur du titre des graphiques */
+}
+
+@media (min-width: 768px) {
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,43 @@
+<!-- Inclure la bibliothèque de styles de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Inclure Tailwind CSS et DaisyUI -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
+
+<div class="flex justify-center mt-4">
+  <button class="btn custom-btn ml-2" routerLink="/admin/ajouter-guichet">
+    <i class="fas fa-user-plus"></i> Ajouter guichet
+  </button>
+</div>
+
+<div class="overflow-x-auto mt-4">
+  <table class="table w-full">
+    <thead>
+      <tr>
+        <th>Numéro guichet</th>
+        <th>CIN employé</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Numéro ticket actuel</th>
+        <th>status</th>
+        <th></th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let guichet of guichets">
+        <td>{{ guichet.num_guichet }}</td>
+        <td>{{ guichet.cinEmploye }}</td>
+        <td>{{ getEmployeName(guichet.cinEmploye)?.nom }}</td>
+        <td>{{ getEmployeName(guichet.cinEmploye)?.prenom }}</td>
+        <td>{{ guichet.num_ticket }}</td>
+        <td>{{ guichet.status }}</td>
+        <td>
+          <button class="text-red-500 hover:text-red-700 ml-2" (click)="deleteGuichet(guichet.num_guichet)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

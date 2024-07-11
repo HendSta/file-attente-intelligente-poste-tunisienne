@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <style>
+        .bg-blue {
+            background-color: #00008B; /* Dark Blue */
+        }
+        .nav-link:hover {
+            background-color: #000000; /* Black */
+            color: #ffffff; /* White */
+        }
+        .nav-link {
+            color: #ffffff; /* White */
+        }
+        .btn-connect {
+            background-color: #ffffff; /* White */
+            color: #00008B; /* Dark Blue */
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: medium;
+            text-align: center;
+        }
+        .btn-connect:hover {
+            background-color: #dddddd; /* Light gray */
+        }
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-links {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+        .navbar-links a {
+            margin: 0 1rem; /* Space between links */
+        }
+        .navbar-end {
+            display: flex;
+            align-items: center;
+        }
+        .brand-container {
+            display: flex;
+            align-items: center;
+        }
+        .brand-logo {
+            height: 40px; /* Adjust as needed */
+            margin-right: 10px; /* Space between logo and brand name */
+        }
+    </style>
+</head>
+<body>
+   <!-- header.component.html -->
+<nav class="bg-blue shadow-lg">
+    <div class="navbar-container py-2 px-8 md:px-12">
+      <div class="brand-container text-2xl font-bold text-white hover:text-gray-300 md:text-3xl">
+        <img src="./assets/images/poste logo.png" class="brand-logo">
+        <a href="#">Ma Poste</a>
+      </div>
+      
+      <div class="navbar-end hidden md:flex">
+        <a *ngIf="!isLoggedIn" routerLink="/signin" class="btn-connect">Se connecter</a>
+        <button *ngIf="isLoggedIn" (click)="logout()" class="btn-connect">Se déconnecter</button>
+      </div>
+      <div class="md:hidden">
+        <button type="button" class="block text-white hover:text-gray-300 focus:text-gray-300 focus:outline-none">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path class="hidden" d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"/>
+            <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "demo.greeting": "",
+    "demo.heading": "",
+    "demo.text1": "الزبون رقم {{ numTicket }}، شباك رقم {{ numGuichet }}",
+    "demo.title": "",
+    "icu.pluralization": "",
+    "icu.select": "",
+    "messagebox.warning.text": ""
+  }
+  

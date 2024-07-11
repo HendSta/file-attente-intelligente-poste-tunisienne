@@ -1,0 +1,16 @@
+.error-message {
+    color: red;
+}
+.is-invalid {
+    border-color: red;
+}
+
+.text-red-500 {
+    color: red;
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.875rem; /* Taille du texte légèrement plus petite */
+    margin-top: 0.25rem; /* Espace entre le champ et le message d'erreur */
+}

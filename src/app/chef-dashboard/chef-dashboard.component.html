@@ -1,0 +1,7 @@
+<div class="chef-dashboard flex h-screen">
+    <app-chef-navbar></app-chef-navbar>
+    <div class="content flex-1 overflow-auto">
+      <app-welcomepage *ngIf="showWelcomePage"></app-welcomepage>
+      <router-outlet></router-outlet>
+    </div>
+  </div>

@@ -1,0 +1,9 @@
+<!-- admin-dashboard.component.html -->
+<div class="admin-dashboard flex h-screen">
+  <app-admin-navbar></app-admin-navbar>
+  
+  <div class="content flex-1 overflow-auto">
+    <app-welcomepage *ngIf="showWelcomePage"></app-welcomepage>
+    <router-outlet></router-outlet>
+  </div>
+</div>

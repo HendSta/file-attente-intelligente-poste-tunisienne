@@ -1,0 +1,98 @@
+<!-- Alertes de succès et d'erreur -->
+<div *ngIf="successMessage" role="alert" class="alert alert-success">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>{{ successMessage }}</span>
+</div>
+
+<div *ngIf="errorMessage" role="alert" class="alert alert-error">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>{{ errorMessage }}</span>
+</div>
+
+<div class="flex justify-between space-x-4 mb-6 mt-6">
+  <!-- Cartes de l'employé et du guichet -->
+  <div *ngIf="employe" class="card bg-blue-500 text-primary-content w-96 mb-4">
+    <div class="card-body flex">
+      <div class="flex-1 items-start">
+        <h1 class="card-title">{{ employe.nom }}</h1>
+        <p>NOM</p>
+      </div>
+      <img src="./assets/images/utilisateur.png" alt="Icone" class="h-8 w-8 ml-auto items-end">
+    </div>
+  </div>
+
+  <div *ngIf="employe" class="card bg-blue-600 text-primary-content w-96 mb-4">
+    <div class="card-body flex">
+      <div class="flex-1 items-start">
+        <h1 class="card-title">{{ employe.prenom }}</h1>
+        <p>PRENOM</p>
+      </div>
+      <img src="./assets/images/utilisateur.png" alt="Icone" class="h-8 w-8 ml-auto items-end">
+    </div>
+  </div>
+
+  <div *ngIf="employe" class="card bg-blue-700 text-primary-content w-96 mb-4">
+    <div class="card-body flex">
+      <div class="flex-1 items-start">
+        <h1 class="card-title">{{ employe.service }}</h1>
+        <p>SERVICE</p>
+      </div>
+      <img src="./assets/images/service-clients.png" alt="Icone" class="h-8 w-8 ml-auto items-end">
+    </div>
+  </div>
+
+  <div *ngIf="guichet" class="card bg-blue-800 text-primary-content w-96 mb-4">
+    <div class="card-body flex">
+      <div class="flex-1 items-start">
+        <h1 class="card-title">{{ guichet.num_guichet }}</h1>
+        <p>NUM GUICHET</p>
+      </div>
+      <img src="./assets/images/guichet.png" alt="Icone" class="h-8 w-8 ml-auto items-end">
+    </div>
+  </div>
+</div>
+
+<div *ngIf="currentTicket; else noTicketsMessage" class="text-center mb-6 mt-10">
+  <h1 class="text-2xl font-bold">Numéro de ticket en cours : {{ currentTicket.numTicket }}</h1>
+</div>
+
+<ng-template #noTicketsMessage>
+  <div class="text-center mb-6 mt-10">
+    <h1 class="text-2xl font-bold">Pas de ticket actuellement</h1>
+  </div>
+</ng-template>
+
+<div class="flex justify-center items-start space-x-10 mb-40 mt-40">
+  <div class="text-center space-x-2">
+    <h1 class="text-lg font-semibold mb-2">Servi et suivant ?</h1>
+    <p class="mb-4">Servir ce client et appeler le suivant ?</p>
+    <div class="flex justify-center">
+      <button (click)="updateTicketStatus('servi')" class="btn btn-success flex items-center space-x-2">
+        <img src="./assets/images/fleche-droite.png" class="h-6 w-6">
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex justify-center items-center">
+    <!-- Bouton circulaire avec SVG -->
+    <button class="btn btn-circle" (click)="getDemoTextTranslationAndRead()">
+      <img src="./assets/images/monter-le-son.png" class="h-6 w-6">
+    </button>
+  </div>
+
+  <div class="text-center space-x-2">
+    <h1 class="text-lg font-semibold mb-2">Non servi et suivant ?</h1>
+    <p class="mb-4">Non servir ce client et appeler le suivant ?</p>
+    <div class="flex justify-center">
+      <button (click)="updateTicketStatus('non servi')" class="btn btn-error flex items-center space-x-2">
+        <img src="./assets/images/fleche-droite.png" class="h-6 w-6">
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>
+</div>

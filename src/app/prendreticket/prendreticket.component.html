@@ -1,0 +1,51 @@
+<div class="flex items-center justify-center h-full relative">
+  <!-- Cercle de statut -->
+  <div
+    class="radial-progress"
+    [ngClass]="{
+      'text-blue-500': currentTicketNumber === 0,
+      'text-yellow-500': currentTicketNumber > 0 && currentTicketNumber <= 10,
+      'text-red-500': currentTicketNumber > 10
+    }"
+    [style.--value]="currentTicketNumber === 0 ? 0 : currentTicketNumber > 0 && currentTicketNumber <= 10 ? 50 : 100"
+    style="width: 100px; height: 100px; position: absolute; top: 20px; right: 20px;"
+    role="progressbar">
+    <div class="absolute inset-0 flex items-center justify-center">
+      {{ currentTicketNumber === 0 ? 'Vide' : currentTicketNumber > 0 && currentTicketNumber <= 10 ? 'Peu encombré' : 'Encombré' }}
+    </div>
+  </div>
+
+  <!-- Contenu principal de la carte -->
+  <div class="card glass w-full max-w-3xl rounded-lg overflow-hidden shadow-lg">
+    <div class="card-body p-6">
+      <div class="flex items-center justify-center mb-4">
+        <h2 class="text-2xl font-bold">Numéro de Ticket Actuel: {{ currentTicketNumber }}</h2>
+      </div>
+      
+      <form class="space-y-4" (submit)="onSubmit()">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 px-4 mb-4">
+            <label for="codePostal" class="block text-sm font-medium text-gray-700">Code Postal</label>
+            <input type="text" id="codePostal" name="codePostal" class="file-input file-input-bordered file-input-primary w-full" [value]="poste?.code_postal" disabled/>
+          </div>
+          <div class="w-full md:w-1/2 px-4 mb-4">
+            <label for="adresse" class="block text-sm font-medium text-gray-700">Adresse Poste</label>
+            <input type="text" id="adresse" name="adresse" class="file-input file-input-bordered file-input-primary w-full" [value]="poste?.adresse" disabled/>
+          </div>
+          <div class="w-full md:w-1/2 px-4 mb-4">
+            <label for="typeService" class="block text-sm font-medium text-gray-700">Type de service</label>
+            <select id="typeService" name="typeService" class="form-select w-full" [(ngModel)]="selectedService" required>
+              <option value="" disabled selected>Choisir un service</option>
+              <option value="financier">Service financier</option>
+              <option value="postal">Service postal</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-actions justify-end">
+          <button class="btn btn-active btn-block text-white hover:bg-blue-800 hover:text-gray-300" type="submit" style="background-color: #00008B;">PRENDRE UN TICKET</button>
+          <button class="btn btn-active btn-block text-white hover:bg-blue-800 hover:text-gray-300" type="button" style="background-color: #00008B;" routerLink="/client/prendreticket">ANNULER</button>
+        </div>
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,13 @@
+/* welcome-page.component.css */
+.welcome-page {
+    height: 98vh;
+    width: 90vw;
+    position: relative;
+  }
+  
+  .welcome-page img {
+    height: 98%;
+    width: 90%;
+    object-fit: cover;
+  }
+  

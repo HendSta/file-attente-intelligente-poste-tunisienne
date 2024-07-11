@@ -1,0 +1,8 @@
+.custom-btn {
+    background-color: #00008B;
+    border-color: #00008B;
+  }
+  .custom-btn:hover {
+    background-color: #0000FF; /* Une nuance plus claire pour le survol */
+    border-color: #0000FF;
+  }

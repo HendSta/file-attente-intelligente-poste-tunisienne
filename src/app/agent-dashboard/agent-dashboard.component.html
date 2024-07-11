@@ -1,0 +1,7 @@
+<div class="agent-dashboard flex h-screen">
+    <app-agent-navbar></app-agent-navbar>
+    <div class="content flex-1 overflow-auto">
+      <app-welcomepage *ngIf="showWelcomePage"></app-welcomepage>
+      <router-outlet></router-outlet>
+    </div>
+  </div>

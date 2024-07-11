@@ -1,0 +1,12 @@
+/* styles.css ou mon-compte.component.css */
+html, body, .admin-dashboard, .content, .flex {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

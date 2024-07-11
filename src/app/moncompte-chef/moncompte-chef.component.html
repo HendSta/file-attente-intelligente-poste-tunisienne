@@ -1,0 +1,18 @@
+<div class="flex items-center justify-center h-full">
+    <div class="card w-full max-w-xl glass">
+      <div class="card-body">
+        <h2 class="card-title text-blue-800 py-2 px-4 rounded-lg mb-4 text-center flex justify-center">Mes Informations</h2>
+        <p class="card-text"><strong>CIN:</strong> {{ user.cin }}</p>
+        <p class="card-text"><strong>Nom:</strong> {{ user.nom }}</p>
+        <p class="card-text"><strong>Prénom:</strong> {{ user.prenom }}</p>
+        <p class="card-text"><strong>Date de Naissance:</strong> {{ user.date_naissance | date:'longDate' }}</p>
+        <p class="card-text"><strong>Code postal:</strong> {{ user.code_postal }}</p>
+        <p class="card-text"><strong>Numéro de Téléphone:</strong> {{ user.tel }}</p>
+        <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+        <p class="card-text"><strong>Mot de passe:</strong> {{ user.mdp }}</p>
+        <p class="card-text"><strong>Service:</strong> {{ user.service }}</p>
+        <p class="card-text"><strong>Rôle:</strong> {{ user.role }}</p>
+      </div>
+    </div>
+  </div>
+  

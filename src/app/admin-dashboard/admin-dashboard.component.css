@@ -1,0 +1,18 @@
+/* admin-dashboard.component.css */
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  app-admin-navbar {
+    width: 20rem;
+    background-color: var(--custom-blue);
+  }
+  
+  .content {
+    flex: 1;
+    overflow: auto;
+    padding: 1rem;
+  }
+
+  

@@ -1,0 +1,69 @@
+<div class="min-h-screen bg-white-100 py-6 flex flex-col justify-center sm:py-12">
+    <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+      <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
+        <div class="max-w-md mx-auto">
+          <div class="flex items-center space-x-5">
+            <div class="h-14 w-14 rounded-full flex flex-shrink-0 justify-center items-center">
+              <img src="./assets/images/poste logo.png" class="brand-logo">
+            </div>
+            <div class="block pl-2 font-semibold text-xl self-start text-gray-700">
+              <h2 class="leading-relaxed">Créer un compte sur MA POSTE</h2>
+            </div>
+          </div>
+          <div class="divide-y divide-gray-200">
+            <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+              <div class="flex flex-col">
+                <label class="leading-loose">CIN</label>
+                <input [(ngModel)]="client.cin" type="number" name="cin" #cin="ngModel" required [ngClass]="{'is-invalid': cin.invalid && cin.dirty}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="CIN">
+                <div *ngIf="cin.invalid && cin.dirty" class="text-red-500">Veuillez entrer votre CIN.</div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Nom</label>
+                <input [(ngModel)]="client.nom" type="text" name="nom" #nom="ngModel" required [ngClass]="{'is-invalid': nom.invalid && nom.dirty}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="NOM">
+                <div *ngIf="nom.invalid && nom.dirty" class="text-red-500">Veuillez entrer votre nom.</div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Prénom</label>
+                <input [(ngModel)]="client.prenom" type="text" name="prenom" #prenom="ngModel" required [ngClass]="{'is-invalid': prenom.invalid && prenom.dirty}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="PRENOM">
+                <div *ngIf="prenom.invalid && prenom.dirty" class="text-red-500">Veuillez entrer votre prénom.</div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Numéro téléphone</label>
+                <input [(ngModel)]="client.tel" type="tel" name="tel" #tel="ngModel" required [ngClass]="{'is-invalid': tel.invalid && tel.dirty}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="NUMERO TELEPHONE">
+                <div *ngIf="tel.invalid && tel.dirty" class="text-red-500">Veuillez entrer votre numéro de téléphone.</div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Date de naissance</label>
+                <input [(ngModel)]="client.date_naissance" type="date" name="date_naissance" #date_naissance="ngModel" required class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="DATE DE NAISSANCE">
+                <span *ngIf="isUnderage(client.date_naissance)" class="text-red-500">L'âge minimum requis est de 18 ans.</span>
+              </div>
+              <div class="flex items-center space-x-6">
+                <div class="flex flex-col">
+                  <label class="leading-loose">Email</label>
+                  <input [(ngModel)]="client.email" type="email" name="email" #email="ngModel" required email [ngClass]="{'is-invalid': email.invalid && email.dirty}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="EMAIL">
+                  <div *ngIf="email.invalid && email.dirty" class="text-red-500">Veuillez entrer votre E-mail.</div>
+                </div>
+                <div class="flex flex-col">
+                  <label class="leading-loose">Mot de passe</label>
+                  <input [(ngModel)]="client.mdp" type="password" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="MOT DE PASSE">
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Vérifier mot de passe</label>
+                <input [(ngModel)]="confirmMdp" type="password" required name="confirmMdp" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="MOT DE PASSE">
+                <span *ngIf="submitted && client.mdp !== confirmMdp" class="text-red-500">Vérifiez votre mot de passe.</span>
+              </div>
+            </div>
+            <div class="pt-4 flex items-center space-x-4">
+              <button class="flex justify-center items-center w-full text-gray-900 px-4 py-3 rounded-md focus:outline-none" routerLink="/signin">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Annuler
+              </button>
+              <button class="bg-blue-500 flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none" (click)="creerClient()">Créer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
